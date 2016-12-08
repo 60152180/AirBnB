@@ -1,0 +1,15 @@
+extends layout
+
+block content
+h2 #{users.name}님 안녕하세요! 호스트가 될 준비를 시작해 보세요.
+.container
+    h3.page-header 정보를 입력하세요.
+    .form-group
+    input.form(type="text" size=20, placeholder='간단한 설명')
+    select.form-control(name='category')
+        option(value='집전체') 집전체
+        option(value='개인실') 개인실
+        option(value='다인실') 다인실
+    
+  .actions
+      button#post-task.btn.btn-primary.btn-lg.btn-block(type='button') 완료
