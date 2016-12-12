@@ -1,14 +1,15 @@
 extends layout
 
 block content
-  h1 에어비앤비와 함께 새로운 여행을 시작하세요
-  hr
-  .form(class='search')
-    위치
-    input.form(type='text', id='locate', size=20, placeholder='목적지')
-    날짜
-    input.form(type='text', id='checkin', size=20, placeholder='체크인')
-    input.form(type='text', id='checkout', size=20, placeholder='체크아웃')
-    인원
-    input.form(type='text', id='people', size=20, placeholder='인원수')
-    button.btn.btn-default 숙소검색
+  .jumbotron
+    h1 에어비앤비와 함께 새로운 여행을 시작하세요
+    hr
+    .form(class='search')
+      위치
+      input.form(type='text', id='locate', size=20, placeholder='목적지')
+      날짜
+      input.form(type='text', id='checkin', size=20, placeholder='체크인')
+      input.form(type='text', id='checkout', size=20, placeholder='체크아웃')
+      인원
+      input.form(type='text', id='people', size=20, placeholder='인원수')
+      button.btn.btn-default 숙소검색

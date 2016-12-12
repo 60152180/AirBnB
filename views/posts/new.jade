@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+.container
+    h2 #{users.name}님 안녕하세요! 호스트가 될 준비를 시작해 보세요.
+    h3.page-header 정보를 입력하세요.
+    form(action='/posts', method='POST')
+        .form-group
+            label(for='title') 제목을 적어주세요.
+            input.form(type="text", name='title', size=20, placeholder='간단한 설명')
+        .form-group
+            label(for='explanation') 간단한 설명을 적어주세요.
+            input.form(type="text", name='explanation', size=20, placeholder='간단한 설명')
+        .form-group
+            label(for='type') 등록하실 숙소의 종류는 무엇인가요?
+            select.form-control(name='category')
+                option(value='집전체') 집전체
+                option(value='개인실') 개인실
+                option(value='다인실') 다인실
+        .form-group
+            select.form-control(name='type')
+                option(value='아파트') 아파트
+                option(value='단독주택') 단독주택
+                option(value='호텔') 호텔
+                option(value='통나무집') 통나무집
+        .form-group 
+            label(for='guest') 숙소에 얼마나 많은 인원이 숙박할 수 있나요?
+            select.form-control(name='guest')
+                option(value='1') 게스트 1명
+                option(value='2') 게스트 2명
+                option(value='3') 게스트 3명
+                option(value='4') 게스트 4명
+                option(value='5') 게스트 5명
+                option(value='6') 게스트 6명
+                option(value='7') 게스트 7명
+                option(value='8') 게스트 8명
+                option(value='9') 게스트 9명
+                option(value='10') 게스트 10명
+        .form-group
+            label(for='address') 주소를 입력하세요.
+            input.form(type="text", name='address', size=20, placeholder='국가')
+        .form-group
+            label(for='accommodation') 어떤 편의시설을 제공하시나요?
+            checkbox.form-control(name='accommodation')
+                option(value='필수 품목') 필수 품목
+                option(value='무선인터넷') 무선인터넷
+                option(value='샴푸') 샴푸
+                option(value='옷장/서랍장') 옷장/서랍장
+                option(value='TV') TV
+                option(value='난방') 난방
+                option(value='조식,커피,차') 조식,커피,차
+        .form-group
+            label(for='rule') 이용 규칙을 적어주세요.
+            input.form(type="text", name='rule', size=20, placeholder='이용 규칙')
+        .form-group
+            label(for='price') 숙소 이용 요금은 얼마인가요?
+            input.form(type="text", name='price', size=20, placeholder='1일 기준 숙소 요금')
+        div..actions
+            button#post-task.btn.btn-primary.btn-lg.btn-block(type='button') 완료
