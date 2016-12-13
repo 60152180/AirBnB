@@ -14,7 +14,7 @@ function needAuth(req, res, next) {
 
 function validateForm(form) {
   var title = form.title || "";
-  var explanaion = form.explanaion || "";
+  var explanation = form.explanation || "";
   var address = form.address || "";
   var rule = form.rule || "";
   var price = form.price || "";
@@ -23,7 +23,7 @@ function validateForm(form) {
   if (!title) { 
     return '제목을 입력해주세요.'; 
   }
-  if (!explanaion) { 
+  if (!explanation) { 
     return '설명을 입력해주세요.'; 
   }
   if (!address) { 
@@ -44,7 +44,12 @@ function validateForm(form) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  Post.find('/',function(err, posts){
+     if(err){
+       return next(err);
+     }
+     res.render('posts/index', { post: post });
+   });
 });
 
 router.get('/new', needAuth, function(req, res, next) {
@@ -72,7 +77,7 @@ router.post('/', needAuth, function(req, res, next){
       user: req.user._id,
       userName: req.user.name,
       title: req.body.title,
-      explanaion: req.body.explanaion,
+      explanation: req.body.explanation,
       room: req.body.room,
       type: req.body.type,
       guest: req.body.guest,
@@ -87,7 +92,7 @@ router.post('/', needAuth, function(req, res, next){
       if (err) {
         return next(err);
       } else {
-        res.redirect('/posts/show');
+        res.redirect('/posts');
       }
     });
   }); 
@@ -99,7 +104,7 @@ router.delete('/:id', function(req, res, next) {
         if (err) {
         return next(err);
         }
-        res.redirect('/posts/index');
+        res.redirect('/posts', { post: post });
     });
 });
 

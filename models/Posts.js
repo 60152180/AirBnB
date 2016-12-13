@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 var schema = new Schema({
   user: {type: Schema.Types.ObjectId, required: true},
-  user: {type: String, required: true},
+  userName: {type: String, required: true},
   title: {type: String, required: true},
   explanation: {type: String, required: true},
   room: {type: String, required: true},
