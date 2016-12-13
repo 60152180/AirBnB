@@ -44,12 +44,7 @@ function validateForm(form) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Post.find('/',function(err, posts){
-     if(err){
-       return next(err);
-     }
-     res.render('posts/index', { post: post });
-   });
+  res.render('posts/index');
 });
 
 router.get('/new', needAuth, function(req, res, next) {
