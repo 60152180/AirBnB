@@ -3,12 +3,13 @@ var mongoose = require('mongoose'),
 
 var schema = new Schema({
   user: {type: Schema.Types.ObjectId, required: true},
-  userName:{type: String, trim: true},
+  user: {type: String, required: true},
   title: {type: String, required: true},
   explanation: {type: String, required: true},
   room: {type: String, required: true},
   type: {type: String, required: true},
   guest: {type: Number, required: true},
+  city: {type: String, required: true},
   address: {type: String, required: true},
   accommodation:{type: String, required: true},
   rule:{type: String, required: true},
@@ -19,6 +20,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 
-var User = mongoose.model('User', schema);
+var Post = mongoose.model('Post', schema);
 
-module.exports = User;
+module.exports = Post;

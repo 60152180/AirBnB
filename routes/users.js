@@ -15,6 +15,7 @@ function validateForm(form, options) {
   var name = form.name || "";
   var email = form.email || "";
   var phone = form.phone || "";
+  
   name = name.trim();
   email = email.trim();
   phone = phone.trim();

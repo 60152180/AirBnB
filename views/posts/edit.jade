@@ -3,7 +3,7 @@ extends ../layout
 block content
   .container
     form.form-hosting(action='/posts', method='POST')
-      h1.page-header 호스트가 될 준비를 시작해 보세요.
+      h1.page-header 숙소 정보를 변경해주세요.
       .form-group
         label(for='title') 제목을 적어주세요.
         input(type="text", name='title', size=20, placeholder='제목')
@@ -56,4 +56,4 @@ block content
       div.form-actions
         a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
         | 
-        button.btn.btn-primary(type='submit') 등록
+        button.btn.btn-primary(type='submit') 완룐
